@@ -18,7 +18,7 @@ class GildedRose
     }
 
     public static function of($name, $quality, $sellIn) {
-        return new static($name, $quality, $sellIn);
+        return ItemFactory::create($name, $quality, $sellIn);
     }
 
     public function tick()
