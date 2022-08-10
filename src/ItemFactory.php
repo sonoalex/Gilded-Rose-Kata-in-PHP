@@ -12,7 +12,7 @@ use App\Items\Sulfuras;
 
 class ItemFactory
 {
-    public static function create(string $name, int $sellIn, int $quality)
+    public static function create(string $name, int $quality, int $sellIn)
     {
         $class =  match ($name){
             AgedBrie::OFFICIAL_NAME => AgedBrie::class,
@@ -22,6 +22,6 @@ class ItemFactory
             default => Sulfuras::class
         };
 
-        return new $class($sellIn, $quality);
+        return new $class($quality, $sellIn);
     }
 }
